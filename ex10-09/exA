@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void divisores(int n) {
+    if (n <= 0) {
+        printf("Entrada invalida\n");
+        return;
+    }
+    printf("Divisores de %d: ", n);
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    int num;
+    printf("Digite um numero: ");
+    scanf("%d", &num);
+    divisores(num);
+    return 0;
+}

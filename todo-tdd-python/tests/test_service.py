@@ -3,7 +3,6 @@ from todo.service import TaskService
 from todo.models import TaskStatus
 
 import sys, os
-# Ensure src/ is on path when running pytest locally without installing the package
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 
 @pytest.fixture
@@ -63,4 +62,4 @@ def test_list_tasks_should_return_immutable_tuple(service):
     tasks = service.list_tasks()
     assert isinstance(tasks, tuple)
     with pytest.raises(AttributeError):
-        tasks.append("qualquer")  # tupla não possui append
+        tasks.append("qualquer")  
